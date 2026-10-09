@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ntb-white: #FFFFFF;
+  --color-ntb-page: #F7FAFC;
+  --color-ntb-soft: #F2F6F7;
+  
+  --color-ntb-text: #0F172A;
+  --color-ntb-muted: #64748B;
+  --color-ntb-border: #E2E8F0;
+  
+  --color-ntb-blue: #1677FF;
+  --color-ntb-blue-soft: #EAF3FF;
+  --color-ntb-blue-deep: #0F5ED7;
+  
+  --color-ntb-green: #18A66A;
+  --color-ntb-green-soft: #E9F8F1;
+  --color-ntb-green-deep: #0F7A4D;
+
+  --color-ntb-glass: rgba(255, 255, 255, 0.72);
+
+  --radius-pill: 999px;
+  --radius-input: 16px;
+  --radius-card: 24px;
+  --radius-sheet: 32px;
+
+  /* Motion Tokens */
+  --ntb-ms-micro: 150ms;
+  --ntb-ms-control: 210ms;
+  --ntb-ms-card: 280ms;
+  --ntb-ms-reveal: 550ms;
+  --ntb-ms-technical: 750ms;
+  
+  --ntb-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    --bottom-safe-area: env(safe-area-inset-bottom, 0px);
+    --bottom-dock-height: 64px;
+  }
+  @media (min-width: 768px) {
+    :root {
+      --bottom-dock-height: 80px;
+    }
+  }
+  body {
+    background-color: var(--color-ntb-page);
+    color: var(--color-ntb-text);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Depth System */
+  .ntb-depth-0 {
+    background-color: var(--color-ntb-page);
+  }
+  .ntb-depth-1 {
+    @apply bg-white border border-ntb-border shadow-[0_2px_8px_-2px_rgba(0,0,0,0.02),0_4px_16px_-4px_rgba(0,0,0,0.04)];
+  }
+  .ntb-depth-2 {
+    @apply bg-white border border-ntb-border shadow-[0_4px_12px_-4px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.08)];
+  }
+
+  /* Technical Patterns */
+  .ntb-grid-bg {
+    background-image: 
+      radial-gradient(circle at 2px 2px, var(--color-ntb-border) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}

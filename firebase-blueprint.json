@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "B2B plastic packaging and precision mold product entity",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "sku": { "type": "string" },
+        "material": { "type": "string" },
+        "capacity": { "type": "string" },
+        "neck": { "type": "string" },
+        "weight": { "type": "string" },
+        "height": { "type": "string" },
+        "diameter": { "type": "string" },
+        "color": { "type": "string" },
+        "shape": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "image": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "name", "slug", "material", "categoryId", "image"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with role-based access control",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["uid", "status"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Public catalog products and technical specifications"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profiles and RBAC permissions"
+    }
+  }
+}

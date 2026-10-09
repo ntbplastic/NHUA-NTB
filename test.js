@@ -1,0 +1,27 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var products_1 = require("./src/lib/mock/products");
+var categories = ['pet', 'hdpe', 'hu-nhua', 'can-nhua', 'nap-nhua', 'phoi-pet'];
+categories.forEach(function (cat) {
+    var prods = products_1.mockProducts.filter(function (p) { return p.categoryId === cat; });
+    var materials = new Set(prods.map(function (p) { return p.material; }).filter(Boolean));
+    var capacities = new Set(prods.map(function (p) { return p.capacity; }).filter(Boolean));
+    var necks = new Set(prods.map(function (p) { return p.neck; }).filter(Boolean));
+    var weights = new Set(prods.map(function (p) { return p.weight; }).filter(Boolean));
+    var shapes = new Set(prods.map(function (p) { return p.shape; }).filter(Boolean));
+    var colors = new Set(prods.map(function (p) { return p.color; }).filter(Boolean));
+    var apps = new Set(prods.flatMap(function (p) { return p.applications || []; }).filter(Boolean));
+    console.log("\n".concat(cat.toUpperCase()));
+    console.log("Products: ".concat(prods.length));
+    console.log("Material distinct: ".concat(Array.from(materials).join(', ') || 'None'));
+    console.log("Material facet: ".concat(materials.size >= 2 ? 'SHOWN' : 'HIDDEN'));
+    console.log("Capacity distinct: ".concat(Array.from(capacities).length));
+    console.log("Capacity facet: ".concat(capacities.size >= 2 && cat !== 'nap-nhua' && cat !== 'phoi-pet' ? 'SHOWN' : 'HIDDEN'));
+    console.log("Neck distinct: ".concat(Array.from(necks).length));
+    console.log("Neck facet: ".concat(necks.size >= 2 ? 'SHOWN' : 'HIDDEN'));
+    console.log("Weight distinct: ".concat(Array.from(weights).length));
+    console.log("Weight facet: ".concat(weights.size >= 2 ? 'SHOWN' : 'HIDDEN'));
+    console.log("Shape distinct: ".concat(Array.from(shapes).length));
+    console.log("Color distinct: ".concat(Array.from(colors).length));
+    console.log("Application distinct: ".concat(Array.from(apps).length));
+});

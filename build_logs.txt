@@ -1,0 +1,48 @@
+
+> ntb-b2b@1.0.0 build
+> NODE_ENV=production next build
+
+   ▲ Next.js 15.5.25
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 5.3s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/17) ...
+   Generating static pages (4/17) 
+   Generating static pages (8/17) 
+   Generating static pages (12/17) 
+ ✓ Generating static pages (17/17)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                    Size  First Load JS
+┌ ○ /                                       4.21 kB         299 kB
+├ ○ /_not-found                               138 B         103 kB
+├ ○ /admin-preview                          6.24 kB         294 kB
+├ ○ /compare                                4.18 kB         295 kB
+├ ○ /da-luu                                 2.24 kB         297 kB
+├ ○ /dang-nhap                              4.43 kB         282 kB
+├ ○ /doi-tac                                  856 B         283 kB
+├ ○ /giai-phap                              2.02 kB         285 kB
+├ ƒ /giai-phap/[slug]                       3.52 kB         299 kB
+├ ○ /lien-he                                  138 B         103 kB
+├ ○ /nang-luc-nha-may                         164 B         106 kB
+├ ○ /nang-luc/khuon-co-khi-chinh-xac          164 B         106 kB
+├ ○ /quy-trinh                              1.54 kB         293 kB
+├ ○ /rfq                                    5.03 kB         296 kB
+├ ○ /san-pham                               3.38 kB         298 kB
+├ ƒ /san-pham/[categorySlug]                4.55 kB         300 kB
+├ ƒ /san-pham/[categorySlug]/[productSlug]  5.69 kB         301 kB
+├ ○ /tin-tuc                                 2.6 kB         294 kB
+└ ƒ /tin-tuc/[slug]                            3 kB         298 kB
++ First Load JS shared by all                103 kB
+  ├ chunks/255-37e0f0325134c4d7.js          46.4 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js     54.2 kB
+  └ other shared chunks (total)             1.93 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
